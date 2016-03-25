@@ -6,6 +6,7 @@
   "scripts": {
     "test": "tape test.js",
     "dist": "babel index.js --out-dir ./dist --presets react",
+    "version": "npm run dist && git add -A dist",
     "start": "watchify -t reactify example/site.js -o example/bundle.js & st -nc"
   },
   "repository": {
