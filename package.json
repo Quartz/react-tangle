@@ -2,10 +2,11 @@
   "name": "react-tangle",
   "version": "2.2.0",
   "description": "tangle.js style input elements for react",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "tape test.js",
-    "start": "watchify example/site.js -o example/bundle.js & st -nc"
+    "dist": "babel index.js --out-dir ./dist --presets react",
+    "start": "watchify -t reactify example/site.js -o example/bundle.js & st -nc"
   },
   "repository": {
     "type": "git",
@@ -21,11 +22,6 @@
     "text",
     "drag"
   ],
-  "browserify": {
-    "transform": [
-      "reactify"
-    ]
-  },
   "author": "Tom MacWright",
   "license": "ISC",
   "bugs": {
@@ -33,6 +29,9 @@
   },
   "homepage": "https://github.com/mapbox/react-tangle",
   "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-core": "^6.7.4",
+    "babel-preset-react": "^6.5.0",
     "browserify": "^6.1.0",
     "reactify": "^0.16.0",
     "st": "^0.5.2",
