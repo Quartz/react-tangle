@@ -23,7 +23,14 @@
   ],
   "browserify": {
     "transform": [
-      "reactify"
+      [
+        "babelify",
+        {
+          "presets": [
+            "react"
+          ]
+        }
+      ]
     ]
   },
   "author": "Tom MacWright",
@@ -33,8 +40,9 @@
   },
   "homepage": "https://github.com/mapbox/react-tangle",
   "devDependencies": {
+    "babel-preset-react": "^6.23.0",
+    "babelify": "^7.3.0",
     "browserify": "^6.1.0",
-    "reactify": "^0.16.0",
     "st": "^0.5.2",
     "watchify": "^2.0.0"
   },

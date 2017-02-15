@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 var TangleText = require('../'),
   React = require('react'),
   ReactDOM = require('react-dom');
